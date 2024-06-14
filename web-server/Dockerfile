@@ -54,7 +54,7 @@ ARG SGX_MODE="SW"
 
 # STAGE: base
 # Common base for both builder and runner stages, with apt caching, ca-certificates, and a non-root user
-FROM ubuntu:20.04 AS base
+FROM --platform=linux/amd64 ubuntu:20.04 AS base
 
 RUN rm /etc/apt/apt.conf.d/docker-clean
 
